@@ -172,3 +172,44 @@ const scheduleData = {
 // Reuse schedules
 scheduleData.wednesday = scheduleData.monday;
 scheduleData.thursday = scheduleData.tuesday;
+function getTodayName() {
+    const days = [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+    ];
+
+    return days[new Date().getDay()];
+}
+
+function timeToMinutes(timeString) {
+    const [hours, minutes] = timeString.split(":").map(Number);
+    return hours * 60 + minutes;
+}
+
+function getCurrentBlock() {
+
+    const today = getTodayName();
+
+    if (!scheduleData[today]) {
+        return null;
+    }
+
+    const now = new Date();
+
+    const currentMinutes =
+        now.getHours() * 60 + now.getMinutes();
+
+    return scheduleData[today].find(block => {
+
+        return (
+            currentMinutes >= timeToMinutes(block.start) &&
+            currentMinutes < timeToMinutes(block.end)
+        );
+
+    }) || null;
+}
