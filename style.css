@@ -1,0 +1,345 @@
+/* =====================================
+   Director's Dashboard v1.0
+   Navy & Orange Theme
+===================================== */
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #071a33;
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+
+
+/* =====================================
+   Header
+===================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0b2d5b;
+    border-radius: 18px;
+
+    padding: 25px 35px;
+
+    border: 2px solid #f58220;
+}
+
+
+
+.title-area h1 {
+
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 1px;
+
+}
+
+
+
+.title-area p {
+
+    margin-top: 10px;
+    font-size: 22px;
+    color: #d9e5f5;
+
+}
+
+
+
+.clock-area {
+
+    text-align: right;
+
+}
+
+
+
+#clock {
+
+    font-size: 64px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+}
+
+
+
+/* =====================================
+   Countdown
+===================================== */
+
+.countdown-container {
+
+    margin-top: 20px;
+
+    background: #102b4c;
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border: 2px solid #f58220;
+
+}
+
+
+
+#countdown-title {
+
+    font-size: 24px;
+    color: #f58220;
+
+    font-weight: bold;
+
+}
+
+
+
+#countdown {
+
+    font-size: 72px;
+
+    font-weight: bold;
+
+    margin: 10px;
+
+}
+
+
+
+.progress-bar {
+
+    height: 18px;
+
+    background: #020b16;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+
+#progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #f58220;
+
+    transition: width 1s linear;
+
+}
+
+
+
+/* =====================================
+   Main Content
+===================================== */
+
+
+.main-content {
+
+    display: grid;
+
+    grid-template-columns: 1fr 2.5fr;
+
+    gap: 20px;
+
+    flex: 1;
+
+    margin-top: 20px;
+
+}
+
+
+
+.panel {
+
+    background: #0b2d5b;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 2px solid rgba(245,130,32,0.5);
+
+}
+
+
+
+.panel h2 {
+
+    margin-top: 0;
+
+    color: #f58220;
+
+    font-size: 30px;
+
+}
+
+
+
+/* =====================================
+   Schedule
+===================================== */
+
+
+.schedule-item {
+
+    padding: 15px;
+
+    margin: 10px 0;
+
+    background: #102b4c;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+}
+
+
+
+.schedule-item.active {
+
+    border-left: 8px solid #f58220;
+
+    background: #163d66;
+
+}
+
+
+
+.schedule-item.completed {
+
+    opacity: 0.5;
+
+}
+
+
+
+/* =====================================
+   Agenda
+===================================== */
+
+
+.agenda-content {
+
+    font-size: 24px;
+
+    line-height: 1.5;
+
+}
+
+
+
+.agenda-content h3 {
+
+    color: #f58220;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.agenda-content p {
+
+    margin-top: 5px;
+
+}
+
+
+
+/* =====================================
+   Footer
+===================================== */
+
+
+.footer {
+
+    margin-top: 20px;
+
+    background: #0b2d5b;
+
+    border-radius: 18px;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 24px;
+
+    border: 2px solid #f58220;
+
+}
+
+
+
+.footer span {
+
+    color: #f58220;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =====================================
+   Mobile / Smaller Screens
+===================================== */
+
+
+@media(max-width:900px){
+
+    .main-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    #clock {
+
+        font-size: 40px;
+
+    }
+
+
+    .title-area h1 {
+
+        font-size: 30px;
+
+    }
+
+}
