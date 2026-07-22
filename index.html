@@ -4,123 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Director's Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="dashboard">
+<header class="top-bar">
+    <div class="title">
+        <h1 id="dashboardTitle">Director's Dashboard</h1>
+        <p id="currentDate">Loading date...</p>
+    </div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="title-area">
-            <h1>🎼 Director's Dashboard</h1>
-            <p id="date-display">Loading date...</p>
+    <div class="clock" id="clock">
+        00:00:00
+    </div>
+</header>
+
+<section id="countdownBanner" class="countdown hidden">
+    <div class="countdown-message">
+        🎵 CLASS BEGINS • PLEASE BE READY
+    </div>
+
+    <div class="countdown-time" id="countdownTime">
+        3:00
+    </div>
+</section>
+
+<main class="dashboard">
+
+    <section class="card schedule">
+        <h2>Today in the Band Room</h2>
+        <div id="todaySchedule">
+            Loading schedule...
         </div>
-
-        <div class="clock-area">
-            <div id="clock">00:00:00</div>
-        </div>
-    </header>
-
-
-    <!-- Countdown Banner -->
-    <section class="countdown-container">
-
-        <div id="countdown-title">
-            NEXT CLASS
-        </div>
-
-        <div id="countdown">
-            --:--
-        </div>
-
-        <div class="progress-bar">
-            <div id="progress-fill"></div>
-        </div>
-
     </section>
 
-
-    <!-- Main Dashboard -->
-    <main class="main-content">
-
-
-        <!-- Schedule Panel -->
-        <section class="panel schedule-panel">
-
-            <h2>Today's Schedule</h2>
-
-            <div id="schedule-list">
-                Loading schedule...
-            </div>
-
-        </section>
-
-
-
-        <!-- Agenda Panel -->
-        <section class="panel agenda-panel">
-
-            <h2>Daily Agenda</h2>
-
-            <div class="agenda-content">
-
-                <h3>Objectives</h3>
-                <p>
-                    Add today's objectives here.
-                </p>
-
-
-                <h3>Rehearsal Plan</h3>
-                <p>
-                    Add rehearsal notes here.
-                </p>
-
-
-                <h3>Reminders</h3>
-                <p>
-                    Add announcements here.
-                </p>
-
-            </div>
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- Footer -->
-    <footer class="footer">
-
-        <div>
-            <strong>Current Class:</strong>
-            <span id="current-class">
-                None
-            </span>
+    <section class="card agenda">
+        <h2>Today's Agenda</h2>
+        <div id="agendaContent">
+            Google Doc integration coming in Version 2.2
         </div>
+    </section>
 
-
-        <div>
-            <strong>Next Class:</strong>
-            <span id="next-class">
-                None
-            </span>
+    <section class="card reminders">
+        <h2>Reminders</h2>
+        <div id="reminderContent">
+            No reminders.
         </div>
+    </section>
 
+    <section class="card events">
+        <h2>Upcoming Events</h2>
+        <div id="calendarEvents">
+            Google Calendar integration coming soon.
+        </div>
+    </section>
 
-    </footer>
+</main>
 
+<footer class="footer">
+    <div id="footerMessage">
+        Welcome to Director's Dashboard
+    </div>
+</footer>
 
-
-</div>
-
-
-<script src="schedule.js"></script>
-<script src="script.js"></script>
-
+<script src="js/scheduleEngine.js"></script>
+<script src="js/app.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/teacherPanel.js"></script>
 
 </body>
 </html>
